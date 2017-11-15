@@ -1,0 +1,9 @@
+{
+  "name": "hubyo-socket-server",
+  "version": "0.0.1",
+  "description": "Hubyo Socket IO Server",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.0.4"
+  }
+}
