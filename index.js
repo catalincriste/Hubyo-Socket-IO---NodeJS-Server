@@ -10,17 +10,18 @@ app.get('/', function (req, res) {
 
 //Socket IO Connection
 io.on('connection', function (socket) {
-    io.emit('chat message','A User Connected');    
+    //io.emit('chat message','A User Connected');    
     
     console.log('a user connected');            //On Connect Info
     //Catches the disconnection event on a user leaving the server
     socket.on('disconnect', function () {
-        io.emit('chat message','Someone Disconnected');            
+      //  io.emit('chat message','Someone Disconnected');            
         console.log('user disconnected');   //On Disconnect Info
     });
     //Catches the chat message event, When the user submits the data
-    socket.on('chat message', function (msg) {
-        io.emit('chat message', msg);        
+    socket.on('chat message', function (data) {
+        console.log(data);
+        io.emit('chat message', data);        
     });
 });
 
